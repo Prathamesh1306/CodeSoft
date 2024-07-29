@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Genre Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        label {
+            font-size: 1.2em;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-size: 1em;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Genre Prediction</h1>
+        <form action="/" method="post">
+            <label for="description">Movie Description:</label><br>
+            <textarea id="description" name="description" rows="6" placeholder="Enter the movie description here...">{{ description }}</textarea><br><br>
+            <input type="submit" value="Predict Genre">
+        </form>
+        {% if genre %}
+        <div class="result">
+            <p><strong>Description:</strong> {{ description }}</p>
+            <p><strong>Predicted Genre:</strong> {{ genre }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
